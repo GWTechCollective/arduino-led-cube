@@ -13,3 +13,4 @@ The newer version, named "led-cube-interrupts" is a rewrite of the original code
 In the original version of the program, the cube state was represented by a 2D char array. Each row of the array corresponds to one layer of the LED cube. A group of three rows represents the entire cube since there are three layers in the cube. Each element in the array represents an LED, so you can create patterns simply by specifying if the LED should be ON (1), or OFF (0).
 
 ### New Version
+Rather than wasting an entire char to store what is essentially a single bit of information, the newer version compresses each row of the 2D array from the old version into a single 16-bit int. Patterns are made the same way, except now the ON and OFF states are stored as bits in an int. The example pattern uses hexadecimal notation. You may wish to use Arduino's binary notation if you aren't comfortable with hex conversion.
